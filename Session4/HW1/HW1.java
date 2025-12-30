@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class HW1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap so luong phan tu cua mang: ");
+        System.out.print("Nhập số lượng phần tử của mảng: ");
         int n = sc.nextInt();
         int[] arr = new int[n];
-        System.out.println("Nhap cac phan tu cua mang:");
+        System.out.println("Nhập các phần tử của mảng:");
         for (int i = 0; i < n; i++){
-            System.out.print("Nhap phan tu thu " + (i + 1) + ": ");
+            System.out.print("Nhập phần tử thứ " + (i + 1) + ": ");
             arr[i] = sc.nextInt();
         }
 
@@ -22,7 +22,7 @@ public class HW1 {
             }
         }
 
-        System.out.println("Mang sau khi sap xep giam dan:");
+        System.out.println("Mảng sau khi sắp xếp giảm dần: ");
         for (int i = 0; i < n; i++){
             System.out.print(arr[i] + " ");
         }

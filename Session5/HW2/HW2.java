@@ -7,7 +7,7 @@ public class HW2 {
             str = str + "Word";
         }
         long stringTime = System.nanoTime() - start;
-        System.out.println("Thoi gian thuc hien voi String: " + stringTime / 1_000_000 + " ms");
+        System.out.println("Thời gian thực hiện với String: " + stringTime / 1_000_000 + " ms");
         
         start = System.nanoTime();
 
@@ -16,7 +16,7 @@ public class HW2 {
             sb1.append("World");
         }
         stringTime = System.nanoTime() - start;
-        System.out.println("Thoi gian thuc hien voi StringBuilder: " + stringTime / 1_000_000 + " ms");
+        System.out.println("Thời gian thực hiện với StringBuilder: " + stringTime / 1_000_000 + " ms");
         
         start = System.nanoTime();
         StringBuffer sb2 = new StringBuffer("Hello");
@@ -24,11 +24,12 @@ public class HW2 {
             sb2.append("World");
         }
         stringTime = System.nanoTime() - start;
-        System.out.println("Thoi gian thuc hien voi StringBuffer: " + stringTime / 1_000_000 + " ms");
+        System.out.println("Thời gian thực hiện với StringBuffer: " + stringTime / 1_000_000 + " ms");
         
-        System.out.println("Nhan xet: ");
-        System.out.println("- String: Khong hieu qua cho phep noi chuoi nhieu lan do tao ra nhieu doi tuong moi.");
-        System.out.println("- StringBuilder: Hieu qua va nhanh chong, thich hop cho nhieu thao tac noi chuoi trong mot luong.");
-        System.out.println("- StringBuffer: Tuong tu nhu StringBuilder nhung an toan hon voi da luong, co the cham hon mot chut do dong bo hoa.");
+        System.out.println("Nhận xét: "); 
+        System.out.println("- String: Không hiệu quả cho phép nối chuỗi nhiều lần do tạo ra nhiều đối tượng mới.");
+        System.out.println("- StringBuilder: Hiệu quả và nhanh chóng, thích hợp cho nhiều thao tác nối chuỗi trong một luồng.");
+        System.out.println("- StringBuffer: Tương tự như StringBuilder nhưng an toàn hơn với đa luồng, có thể chậm hơn một chút do đông bộ hóa.");
     }    
+    
 }

@@ -1,10 +1,6 @@
 import java.util.Scanner;
 
 public class HW2 {
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
@@ -14,22 +10,22 @@ public class HW2 {
         double sum = 0.0;
         
         while (true) {
-            System.out.println("**************** MENU NHAP DIEM ****************");
-            System.out.println("1. \t Nhap diem hoc vien");
-            System.out.println("2. \t Hien thi thong ke");
-            System.out.println("3. \t Thoat");
-            System.out.print("Lua chon cua ban: ");
+            System.out.println("**************** MENU NHẬP ĐIỂM ****************");
+            System.out.println("1. \t Nhập điểm học viên");
+            System.out.println("2. \t Hiển thị thống kê");
+            System.out.println("3. \t Thoát");
+            System.out.print("Lựa chọn của bạn: ");
             int choice = sc.nextInt();
 
             if (choice == 1){
-                System.out.println("--- Nhap diem hoc vien (nhap -1 de dung) ---");
+                System.out.println("--- Nhập điểm học viên (nhập -1 để dừng) ---");
                 double point = 0;
                 while(true){
-                    System.out.print("Nhap diem: ");
+                    System.out.print("Nhập điểm: ");
                     point = sc.nextDouble();
                     if (point == -1) break;
                     if (point < -1 || point > 10) {
-                        System.err.println("Diem khong hop le. Nhap lai.");
+                        System.err.println("Điểm không hợp lệ, vui lòng nhập lại.");
                         continue;
                     }
                     else{
@@ -38,26 +34,26 @@ public class HW2 {
                         max_score = Double.max(max_score, point);
                         min_score = Double.min(min_score, point);
                     }
-                    if (point >= 9) System.out.println("Hoc luc: Xuat sac");
-                    else if (point >= 8) System.out.println("Hoc luc: Gioi");
-                    else if (point >= 7) System.out.println("Hoc luc: Kha");
-                    else if (point >= 5) System.out.println("Hoc luc: Trung binh");
-                    else System.out.println("Hoc luc: Yeu");
+                    if (point >= 9) System.out.println("Học lực: Xuất sắc");
+                    else if (point >= 8) System.out.println("Học lực: Giỏi");
+                    else if (point >= 7) System.out.println("Học lực: Khá");
+                    else if (point >= 5) System.out.println("Học lực: Trung bình");
+                    else System.out.println("Học lực: Yếu");
                 }            
             }
             else if (choice == 2){
-                if (cnt == 0) System.out.println("Chua co du lieu");
+                if (cnt == 0) System.out.println("Chưa có dữ liệu.");
                 else{
-                    System.out.println("--- KET QUA ---");
-                    System.out.println("So hoc vien " + cnt);
-                    System.out.println("Diem trung binh: " + (sum / cnt));
-                    System.out.println("Diem cao nhat: " + max_score);
-                    System.out.println("Diem thap nhat: " + min_score);
+                    System.out.println("--- KẾT QUẢ ---");
+                    System.out.println("Số học viên " + cnt);
+                    System.out.println("Điểm trung bình: " + (sum / cnt));
+                    System.out.println("Điểm cao nhất: " + max_score);
+                    System.out.println("Điểm thấp nhất: " + min_score);
                 }
             }
             else if (choice == 3){
                 sc.close();
-                System.out.println("Ket thuc chuong trinh");
+                System.out.println("Kết thúc chương trình");
                 System.exit(0);
             }
         }

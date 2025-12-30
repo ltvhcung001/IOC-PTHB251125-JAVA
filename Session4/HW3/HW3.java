@@ -12,14 +12,14 @@ public class HW3 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap so luong phan tu cua mang: ");
+        System.out.print("Nhập số lượng phần tử của mảng: ");
         int n = sc.nextInt();
         int[] a = new int[n];
         for (int i = 0; i < n; i++){
-            System.out.print("Nhap phan tu thu " + (i + 1) + ": ");
+            System.out.print("Nhập phần tử thứ " + (i + 1) + ": ");
             a[i] = sc.nextInt();
         }
-        System.out.println("Mang sau khi sap xep giam dan: ");
+        System.out.println("Mảng sau khi sắp xếp giảm dần: ");
 
         // Selection sort
         for (int i = 0; i < n; i++){
@@ -37,26 +37,26 @@ public class HW3 {
         }
         for (int i = 0; i < n; i++)
             System.out.print(a[i] + " ");
-        System.out.print("\nNhap so can tim: ");
+        System.out.print("\nNhập số cần tìm: ");
         int k = sc.nextInt();
 
         // Linear search
         boolean flag = false;
-        System.out.print("Tim kiem tuyen tinh: ");
+        System.out.print("Tìm kiếm tuyến tính: ");
         for (int i = 0; i < n; i++){
             if (a[i] == k){
-                System.out.print("So " + k + " co tai vi tri " + i);
+                System.out.print("Số " + k + " có tại vị trí " + i);
                 flag = true;
             }
         }
-        if (!flag) System.out.print("Khong tim thay so " + k + " trong mang."); 
+        if (!flag) System.out.print("Không tìm thấy số " + k + " trong mảng."); 
         System.out.println();
-        
+
         // Binary search
-        System.out.print("Tim kiem nhi phan: ");
+        System.out.print("Tìm kiếm nhị phân: ");
         int index = binarySearch(a, k, 0, n-1);
-        if (index == -1) System.out.print("Khong tim thay so " + k + " trong mang.");
-        else System.out.print("So " + k + " co tai vi tri " + index);
+        if (index == -1) System.out.print("Không tìm thấy số " + k + " trong mảng.");
+        else System.out.print("Số " + k + " có tại vị trí " + index);
         
         sc.close();
     }
