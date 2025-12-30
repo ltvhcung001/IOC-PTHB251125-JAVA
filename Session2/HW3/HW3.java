@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class HW3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap n = ");
+        System.out.print("Nhập n = ");
         int n = sc.nextInt();
         if (n < 0) n = -n;
         int temp = n;
@@ -12,7 +12,7 @@ public class HW3 {
             sum += temp % 10;
             temp /= 10;
         }
-        System.out.printf("Tong cac chu so la: %d", sum);
+        System.out.printf("Tổng các chữ số lẻ là: %d", sum);
         sc.close();
     }
 }

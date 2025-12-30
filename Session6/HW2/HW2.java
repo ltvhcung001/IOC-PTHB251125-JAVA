@@ -8,14 +8,14 @@ public class HW2 {
         String password = new String();
         String phone = new String();
         while (true) {
-            System.out.println("*********************** QUAN LY NGUOI DUNG ***********************");
-            System.out.println("1. Nhap thong tin nguoi dung");
-            System.out.println("2. Chuan hoa ho ten");
-            System.out.println("3. Kiem tra email hop le");
-            System.out.println("4. Kiem tra so dien thoai hop le");
-            System.out.println("5. Kiem tra mat khau hop le");
-            System.out.println("6. Thoat");
-            System.out.print("Lua chon cua ban: ");
+            System.out.println("*********************** QUẢN LÝ NGƯỜI DÙNG ***********************");
+            System.out.println("1. Nhập thông tin người dùng");
+            System.out.println("2. Chuẩn hóa họ tên");
+            System.out.println("3. Kiểm tra email hợp lệ");
+            System.out.println("4. Kiểm tra số điện thoại hợp lệ");
+            System.out.println("5. Kiểm tra mật khẩu hợp lệ");
+            System.out.println("6. Thoát");
+            System.out.print("Lựa chọn của bạn: ");
             int choice = 0;
             String temp = sc.nextLine();
             try {
@@ -25,13 +25,13 @@ public class HW2 {
             }
 
             if (choice == 1) {
-                System.out.print("Nhap ho ten nguoi dung: ");
+                System.out.print("Nhập họ tên người dùng: ");
                 name = sc.nextLine();
-                System.out.print("Nhap email: ");
+                System.out.print("Nhập email: ");
                 email = sc.nextLine();
-                System.out.print("Nhap so dien thoai: ");
+                System.out.print("Nhập số điện thoại: ");
                 phone = sc.nextLine();
-                System.out.print("Nhap mat khau: ");
+                System.out.print("Nhập mật khẩu: ");
                 password = sc.nextLine();
             } else if (choice == 2) {
                 String[] nameParts = name.trim().split(" ");
@@ -44,31 +44,31 @@ public class HW2 {
                     }
                 }
                 name = normalizedName.toString().trim();
-                System.out.println("Ho ten da chuan hoa: " + name);
+                System.out.println("Họ tên đã chuẩn hóa: " + name);
             } else if (choice == 3) {
                 String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
                 if (email.matches(regex))
-                    System.out.println("Email nay hop le!");
+                    System.out.println("Email này hợp lệ!");
                 else
-                    System.out.println("Email khong hop le!");
+                    System.out.println("Email không hợp lệ!");
             } else if (choice == 4) {
                 String regex = "^0\\d{9}$";
                 if (phone.matches(regex))
-                    System.out.println("So dien thoai hop le!");
+                    System.out.println("Số điện thoại này hợp lệ!");
                 else
-                    System.out.println("So dien thoai khong hop le!");
+                    System.out.println("Số điện thoại này không hợp lệ!");
             } else if (choice == 5) {
                 String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
                 if (password.matches(regex))
-                    System.out.println("Mat khau hop le!");
+                    System.out.println("Mật khẩu hợp lệ!");
                 else
-                    System.out.println("Mat khau khong hop le!");
+                    System.out.println("Mật khẩu không hợp lệ!");
             } else if (choice == 6) {
                 sc.close();
-                System.out.println("Tam biet!");
+                System.out.println("Tạm biệt!");
                 return;
             } else {
-                System.out.println("Lua chon khong hop le! Vui long chon lai!");
+                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
             }
         }
     }

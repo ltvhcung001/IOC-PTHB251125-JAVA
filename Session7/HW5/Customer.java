@@ -10,8 +10,8 @@ public class Customer {
     }
 
     public void showInfo(){
-        System.out.println("ID cua khach hang: " + id);
-        System.out.println("Ten khach hang: "+ name);
-        System.out.println("Email khach hang: " + email);
+        System.out.println("ID khách hàng: " + id);
+        System.out.println("Tên khách hàng: "+ name);
+        System.out.println("Email khách hàng: " + email);
     }
 }

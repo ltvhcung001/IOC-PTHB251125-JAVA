@@ -10,8 +10,8 @@ public class Book {
     }
 
     public void printInfo(){
-        System.out.println("Ten quyen sach: " + title);
-        System.out.println("Ten tac gia: " + author);
-        System.out.println("Gia tien: " + price);
+        System.out.println("Tên quyển sách: " + title);
+        System.out.println("Tên tác giả: " + author);
+        System.out.println("Giá tiền: " + price);
     }
 }

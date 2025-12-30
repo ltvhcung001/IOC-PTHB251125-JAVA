@@ -20,16 +20,16 @@ public class HW1 {
         int index = 1;
         while (true) {
 
-            System.out.println("****************** QUAN LY DIEM SV ******************");
-            System.out.println("1. Nhap danh sach diem sinh vien");
-            System.out.println("2. In danh sach diem");
-            System.out.println("3. Tinh diem trung binh cua cac sinh vien");
-            System.out.println("4. Tim diem cao nhat va thap nhat");
-            System.out.println("5. Dem so luong sinh vien dat va truot");
-            System.out.println("6. Sap xep diem tang dan");
-            System.out.println("7. Thong ke so luong sinh vien gioi va xuat sac");
-            System.out.println("8. Thoat");
-            System.out.print("Lua chon cua ban: ");
+            System.out.println("****************** QUẢN LÝ ĐIỂM SV ******************");
+            System.out.println("1. Nhập danh sách điểm sinh viên");
+            System.out.println("2. In danh sách điểm");
+            System.out.println("3. Tính điểm trung bình của các sinh viên");
+            System.out.println("4. Tìm điểm cao nhất và điểm thấp nhất");
+            System.out.println("5. Đếm số lượng sinh viên đạt và trượt");
+            System.out.println("6. Sắp xếp điểm tăng dần");
+            System.out.println("7. Thống kê số lượng sinh viên giỏi và xuất sắc");
+            System.out.println("8. Thoát");
+            System.out.print("Lựa chọn của bạn: ");
 
             String temp = sc.nextLine();
             int choice = 0;
@@ -41,7 +41,7 @@ public class HW1 {
             }
             if (choice == 1){
                 while(true){
-                    System.out.print("Nhap diem sinh vien thu " + (index++) + " (nhap -1 de dung): ");
+                    System.out.print("Nhập điểm sinh viên thứ " + (index++) + " (nhập -1 để dừng): ");
                     String temp2 = sc.nextLine();
                     double point = -2;
                     try{
@@ -57,45 +57,45 @@ public class HW1 {
                         if (point >= 5) cnt_pass++;
                     }
                     else{
-                        System.out.println("Diem khong hop le, vui long nhap lai!");
+                        System.out.println("Điểm không hợp lệ, vui lòng nhập lại!");
                     }
                 }   
             }
             else if (choice == 2){
-                System.out.println("Danh sach diem: ");
+                System.out.println("Danh sách điểm: ");
                 for (int i = 0; i < arr.size(); i++){
-                    System.out.println("Diem sinh vien " + (i+1) + " la: " + arr.get(i));
+                    System.out.println("Điểm sinh viên " + (i+1) + " là: " + arr.get(i));
                 }
             } else if (choice == 3){
-                System.out.println("Diem trung binh cua cac sinh vien: " + (sum / arr.size()));
+                System.out.println("Điểm trung bình của các sinh viên: " + (sum / arr.size()));
             } else if (choice == 4){
                 double max_point = Collections.max(arr);
                 double min_point = Collections.min(arr);
-                System.out.println("Diem cao nhat la: " + max_point);
-                System.out.println("Diem thap nhat la: "+ min_point);
+                System.out.println("Điểm cao nhất là: " + max_point);
+                System.out.println("Điểm thấp nhất là: "+ min_point);
             } 
             else if (choice == 5){
-                System.out.println("So luong sinh vien dat (>=5.0) la: " + cnt_pass);
-                System.out.println("So luong sinh vien truot (<5.0) la: " + (arr.size() - cnt_pass));
+                System.out.println("Số lượng sinh viên đạt (>=5.0) là: " + cnt_pass);
+                System.out.println("Số lượng sinh viên trượt (<5.0) là: " + (arr.size() - cnt_pass));
             }
             else if (choice == 6){
                 sort(arr);
-                System.out.println("Danh sach da duoc sap xep!");
+                System.out.println("Danh sách đã được sắp xếp!");
             }
             else if (choice == 7){
                 int cnt_good = 0;
                 for (int i = 0; i < arr.size(); i++){
                     if (arr.get(i) >= 8.0) cnt_good++;
                 }
-                System.out.println("So luong sinh vien gioi va xuat sac la: " + cnt_good);
+                System.out.println("Số lượng sinh viên giỏi và xuất sắc là: " + cnt_good);
             }
             else if (choice == 8){
                 sc.close();
-                System.out.println("Tam biet!");
+                System.out.println("Tạm biệt!");
                 return;
             }
             else {
-                System.out.println("Lua chon khong hop le, vui long chon lai!");
+                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
             }
         }
     }    

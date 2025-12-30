@@ -17,15 +17,15 @@ public class HW3 {
         ArrayList<String> arr = new ArrayList<>();
         int index = 1;
         while (true) {
-            System.out.println("********************** QUAN LY BIEN SO XE **********************");
-            System.out.println("1. Them cac bien so xe");
-            System.out.println("2. Hien thi danh sach bien so xe");
-            System.out.println("3. Tim kiem bien so xe");
-            System.out.println("4. Tim kiem bien so xe theo ma tinh");
-            System.out.println("5. Sap xep bien so xe tang dan");
-            System.out.println("6. Thoat");
-            System.out.print("Lua chon cua ban: ");
-            String temp = sc.nextLine();
+            System.out.println("********************** QUẢN LÝ BIỂN SỐ XE **********************");
+            System.out.println("1. Thêm các biển số xe");
+            System.out.println("2. Hiển thị danh sách biển số xe");
+            System.out.println("3. Tìm kiếm biển số xe");
+            System.out.println("4. Tìm kiếm biển số xe theo mã tỉnh");
+            System.out.println("5. Sắp xếp biển số xe tăng dần");
+            System.out.println("6. Thoát");
+            System.out.print("Lựa chọn của bạn: ");
+           String temp = sc.nextLine();
             int choice = 0;
             try {
                 choice = Integer.parseInt(temp);
@@ -33,7 +33,7 @@ public class HW3 {
             }
             if (choice == 1) {
                 while (true) {
-                    System.out.print("Nhap bien so thu " + (index++) + " (nhap -1 de dung): ");
+                    System.out.print("Nhập biển số thứ " + (index++) + " (nhập -1 để dừng): ");
                     String temp2 = sc.nextLine();
                     int flag = 0;
                     try{
@@ -46,41 +46,41 @@ public class HW3 {
                     else arr.add(temp2);
                 }
             } else if (choice == 2) {
-                System.out.println("Danh sach bien so xe: ");
+                System.out.println("Danh sách biển số xe: ");
                 for(int i  = 0; i < arr.size(); i++)
-                    System.out.println("\tBien so xe thu " + (i+1) + " la: " + arr.get(i));
+                    System.out.println("\tBiển số xe thứ " + (i+1) + " là: " + arr.get(i));
             } else if (choice == 3) {
                 boolean flag = false;
-                System.out.print("Nhap bien so xe: ");
+                System.out.print("Nhập biển số xe: ");
                 String key = sc.nextLine();
                 for (int i = 0; i < arr.size(); i++){
                     if (key.equals(arr.get(i))){
-                        System.out.println("Bien so xe " + key + " co ton tai trong danh sach tai vi tri " + (i + 1));
+                        System.out.println("Biển số xe " + key + " có tồn tại trong danh sách tại vị trí " + (i + 1));
                         flag = true;
                         break;
                     }
                 }
-                if (!flag) System.out.println("Bien so xe " + key + " khong ton tai trong danh sach!");
+                if (!flag) System.out.println("Biển số xe " + key + " không tồn tại trong danh sách!");
             } else if (choice == 4) {
                 boolean flag = false;
-                System.out.print("Nhap ma tinh");
+                System.out.print("Nhập mã tỉnh");
                 String key = sc.nextLine();
                 for (int i = 0; i < arr.size(); i++){
                     if (arr.get(i).startsWith(key)){
                         flag = true;
-                        System.out.println("Bien so xe " + arr.get(i) + " bat dau bang ma tinh tren.");
+                        System.out.println("Biển số xe " + arr.get(i) + " bắt đầu bằng mã tỉnh trên.");
                     }
                 }
-                if (!flag) System.out.println("Khong co bien so xe nao bat dau bang ma tinh tren!");
+                if (!flag) System.out.println("Không có biển số xe nào bắt đầu bằng mã tỉnh trên!");
             } else if (choice == 5) {
                 sort(arr);
-                System.out.println("Danh sach bien so da duoc sap xep!");
+                System.out.println("Danh sách biển số xe đã được sắp xếp!");
             } else if (choice == 6) {
                 sc.close();
-                System.out.println("Tam biet!");
+                System.out.println("Tạm biệt!");
                 return;
             } else {
-                System.out.println("Lua chon khong hop le! Vui long nhap lai!");
+                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
             }
         }
     }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class HW4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap n (1 <= n <= 1000) = ");
+        System.out.print("Nhập n (1 <= n <= 1000) = ");
         int n = sc.nextInt();
         Random random = new Random();
         StringBuffer sBuffer = new StringBuffer();
@@ -25,7 +25,6 @@ public class HW4 {
         }
 
         System.out.println(sBuffer);
-
         sc.close();
     }
 }

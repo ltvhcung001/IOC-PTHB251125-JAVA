@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -18,14 +17,14 @@ public class HW6 {
         ArrayList<String> arr = new ArrayList<>();
         while (true) {
             System.out.println("======= QUAN LY TEN SINH VIEN =======");
-            System.out.println("1. Them ten sinh vien");
-            System.out.println("2. Hien thi danh sach");
-            System.out.println("3. Tim ten sinh vien chua tu khoa");
-            System.out.println("4. Dem so sinh vien co ten bat dau bang chu cai nhap vao");
-            System.out.println("5. Sap xep danh sach ten theo thu tu A-Z");
-            System.out.println("6. Thoat");
+            System.out.println("1. Thêm tên sinh viên");
+            System.out.println("2. Hiển thị danh sách sinh viên");
+            System.out.println("3. Tìm tên sinh viên chứa từ khóa");
+            System.out.println("4. Đếm số sinh viên có tên bắt đầu bằng chữ cái nhập vào");
+            System.out.println("5. Sắp xếp danh sách tên theo thứ tự A-Z");
+            System.out.println("6. Thoát");
             System.out.println("============================================================");
-            System.out.print("Chon: ");
+            System.out.print("Chọn: ");
 
             String temp = sc.nextLine();
             int choice = 0;
@@ -34,24 +33,24 @@ public class HW6 {
             } catch (Exception e) {
             }
             if (choice == 1) {
-                System.out.print("Nhap ten sinh vien: ");
+                System.out.print("Nhập tên sinh viên: ");
                 String str = sc.nextLine();
                 arr.add(str);
-                System.out.println("Da them " + arr.get(arr.size() - 1));
+                System.out.println("Đã thêm " + arr.get(arr.size() - 1));
             } else if (choice == 2) {
-                System.out.println("Danh sach sinh vien: ");
+                System.out.println("Danh sách sinh viên: ");
                 for (int i = 0; i < arr.size(); i++) {
                     System.out.println("\t" + (i + 1) + ". " + arr.get(i));
                 }
             } else if (choice == 3) {
-                System.out.print("Nhap tu khoa: ");
+                System.out.print("Nhập từ khóa: ");
                 String key = sc.nextLine();
                 for (int i = 0; i < arr.size(); i++) {
                     if (arr.get(i).contains(key))
                         System.out.println("\t- " + arr.get(i));
                 }
             } else if (choice == 4) {
-                System.out.print("Nhap chu cai: ");
+                System.out.print("Nhập chữ cái: ");
                 String key = sc.nextLine();
                 int cnt = 0;
                 for (int i = 0; i < arr.size(); i++) {
@@ -59,17 +58,18 @@ public class HW6 {
                         cnt++;
                     }
                 }
-                System.out.println("So sinh vien co ten bat dau bang '" + key.toLowerCase() + "': " + cnt);
+                System.out.println("Số sinh viên có tên bắt đầu bằng '" + key.toLowerCase() + "': " + cnt);
             } else if (choice == 5) {
                 sort(arr);
-                System.out.println("Danh sach da duoc sap xep A-Z");
+                System.out.println("Danh sách đã được sắp xếp A-Z");
             } else if (choice == 6) {
                 sc.close();
-                System.out.println("Tam biet!");
+                System.out.println("Tạm biệt!");
                 return;
             } else {
-                System.out.println("Lua cho khong hop le, vui long chon lai");
+                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
             }
         }
+        
     }
 }

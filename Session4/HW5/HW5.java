@@ -30,62 +30,62 @@ public class HW5 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap so luong sinh vien (n): ");
+        System.out.print("Nhập số lượng sinh viên (n): ");
         int n = sc.nextInt();
         double[] a = new double[n];
 
         for (int i = 0; i < n; i++) {
-            System.out.print("Nhap diem sinh vien " + (i + 1) + ": ");
+            System.out.print("Nhập điểm sinh viên " + (i + 1) + ": ");
             a[i] = sc.nextDouble();
         }
 
         while (true) {
-            System.out.println("--- QUAN LY DIEM SINH VIEN ---");
-            System.out.println("1. Xem tat ca diem");
-            System.out.println("2. Sap xep diem");
-            System.out.println("3. Tim kiem diem");
-            System.out.println("4. Thong ke diem");
-            System.out.println("5. Thoat");
-            System.out.print("Lua chon cua ban: ");
+            System.out.println("--- QUẢN LÝ ĐIỂM SINH VIÊN ---");
+            System.out.println("1. Xem tất cả điểm");
+            System.out.println("2. Sắp xếp điểm");
+            System.out.println("3. Tìm kiếm điểm");
+            System.out.println("4. Thống kê điểm");
+            System.out.println("5. Thoát");
+            System.out.print("Lựa chọn của bạn: ");
             int choice = sc.nextInt();
             if (choice == 1) {
-                System.out.println("Danh sach diem: ");
+                System.out.println("Danh sách điểm: ");
                 for (int i = 0; i < n; i++) {
-                    System.out.printf("Sinh vien %d: %.1f\n", i + 1, a[i]);
+                    System.out.printf("Sinh viên %d: %.1f\n", i + 1, a[i]);
                 }
             } else if (choice == 2) {
-                System.out.println("1. Tang dan");
-                System.out.println("2. Giam dan");
+                System.out.println("1. Tăng dần");
+                System.out.println("2. Giảm dần");
                 int choice2 = sc.nextInt();
                 if (choice2 == 1) {
                     sort(a, true);
-                    System.out.println("Da sap xep tang dan");
+                    System.out.println("Đã sắp xếp tăng dần");
                 } else if (choice2 == 2) {
                     sort(a, false);
-                    System.out.println("Da sap xep giam dan");
+                    System.out.println("Đã sắp xếp giảm dần");
                 }
             } else if (choice == 3) {
-                System.out.print("Nhap so diem can tim: ");
+                System.out.print("Nhập số cần tìm: ");
                 double point = sc.nextDouble();
-                System.out.print("Tim kiem tuyen tinh: ");
+                System.out.print("Tìm kiếm tuyến tính: ");
                 sort(a, true);
                 boolean flag = false;
                 for (int i = 0; i < n; i++) {
                     if (a[i] == point) {
-                        System.out.println("Tim thay tai vi tri " + i);
+                        System.out.println("Tìm thấy tại vị trí " + i);
                         flag = true;
                         break;
                     }
                 }
                 if (!flag)
-                    System.out.println("Khong tim thay diem " + point + " trong mang.");
+                    System.out.println("Không tìm thấy điểm " + point + " trong mảng.");
 
-                System.out.print("Tim kiem nhi phan (mang tang dan): ");
+                System.out.print("Tìm kiếm nhị phân (mảng tăng dần): ");
                 int index = binarySearch(a, point, 0, n - 1);
                 if (index == -1)
-                    System.out.println("Khong tim thay diem " + point + " trong mang.");
+                    System.out.println("Không tìm thấy điểm " + point + " trong mảng.");
                 else
-                    System.out.print("Tim thay tai vi tri " + index);
+                    System.out.print("Tìm thấy tại vị trí " + index);
             } else if (choice == 4) {
                 double max_point = a[0];
                 double min_point = a[0];
@@ -98,16 +98,16 @@ public class HW5 {
                 }
                 for (int i = 0; i < n; i++)
                     if (a[i] > (sum / n)) cnt++;
-                System.out.println("Diem trung binh: " + (sum / n));
-                System.out.println("Diem cao nhat: " + max_point);
-                System.out.println("Diem thap nhat: " + min_point);
-                System.out.println("So sinh vien co diem tren trung binh: " + cnt);
+                System.out.println("Điểm trung bình: " + (sum / n));
+                System.out.println("Điểm cao nhất: " + max_point);
+                System.out.println("Điểm thấp nhất: " + min_point);
+                System.out.println("Số sinh viên có điểm trên trung bình: " + cnt);
             } else if (choice == 5) {
                 sc.close();
-                System.out.println("Thoat chuong trinh.");
+                System.out.println("Thoát chương trình.");
                 return;
             } else
-                System.out.println("Lua chon khong hop le, vui long chon lai!");
+                System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại!");
         }
 
     }

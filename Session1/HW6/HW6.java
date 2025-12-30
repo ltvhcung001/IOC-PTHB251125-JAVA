@@ -6,12 +6,12 @@ public class HW6 {
         float velocity;
         float time;
 
-        System.out.print("Nhap van toc (km/h) = ");
+        System.out.print("Nhập vận tốc (km/h) = ");
         velocity = sc.nextFloat();
-        System.out.print("Nhap thoi gian (gio) = ");
+        System.out.print("Nhập thời gian (gio) = ");
         time = sc.nextFloat();
 
-        System.out.printf("Quang duong (km) = %.2f", velocity * time);
+        System.out.printf("Quãng đường (km) = %.2f", velocity * time);
         sc.close();
     }
 }

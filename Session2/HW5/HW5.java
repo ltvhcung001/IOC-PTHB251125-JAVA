@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class HW5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap n = ");
+        System.out.print("Nhập n = ");
         int n = sc.nextInt();
 
         if (n < 100 || n > 999) 
-            System.out.println("So nhap vao khong hop le");
+            System.out.println("Số nhập vào không hợp lệ.");
         else{
             int units = n % 10;
             int tens = n % 100 / 10;
@@ -16,31 +16,31 @@ public class HW5 {
             StringBuilder s = new StringBuilder();
             switch (hundreds) {
                 case 1:
-                    s.append("Mot tram");
+                    s.append("Một trăm");
                     break;
                 case 2:
-                    s.append("Hai tram");
+                    s.append("Hai trăm");
                     break;
                 case 3:
-                    s.append("Ba tram");
+                    s.append("Ba trăm");
                     break;
                 case 4:
-                    s.append("Bon tram");
+                    s.append("Bốn trăm");
                     break;
                 case 5:
-                    s.append("Nam tram");
+                    s.append("Năm trăm");
                     break;
                 case 6:
-                    s.append("Sau tram");
+                    s.append("Sáu trăm");
                     break;
                 case 7:
-                    s.append("Bay tram");
+                    s.append("Bảy trăm");
                     break;
                 case 8:
-                    s.append("Tam tram");
+                    s.append("Tám trăm");
                     break;
                 case 9:
-                    s.append("Chin tram");
+                    s.append("Chín trăm");
                     break;
                 default:
                     break;
@@ -48,31 +48,31 @@ public class HW5 {
 
             switch (tens) {
                 case 1:
-                    s.append(" muoi ");
+                    s.append(" mươi ");
                     break;
                 case 2:
-                    s.append(" hai muoi ");
+                    s.append(" hai mươi ");
                     break;
                 case 3:
-                    s.append(" ba muoi ");
+                    s.append(" ba mươi ");
                     break;
                 case 4:
-                    s.append(" bon muoi ");
+                    s.append(" bốn mươi ");
                     break;
                 case 5:
-                    s.append(" nam muoi ");
+                    s.append(" năm mươi ");
                     break;
                 case 6:
-                    s.append(" sau muoi ");
+                    s.append(" sáu mươi ");
                     break;
                 case 7:
-                    s.append(" bay muoi ");
+                    s.append(" bảy mươi ");
                     break;
                 case 8:
-                    s.append(" tam muoi ");
+                    s.append(" tám mươi ");
                     break;
                 case 9:
-                    s.append(" chin muoi ");
+                    s.append(" chín mươi ");
                     break;
                 default:
                     break;
@@ -80,7 +80,7 @@ public class HW5 {
             if (tens == 0 && units != 0) s.append(" le ");
             switch (units) {
                 case 1:
-                    s.append("mot");
+                    s.append("một");
                     break;
                 case 2:
                     s.append("hai");
@@ -89,32 +89,29 @@ public class HW5 {
                     s.append("ba");
                     break;
                 case 4:
-                    s.append("bon");
+                    s.append("bốn");
                     break;
                 case 5:
-                    if(tens == 0) s.append("nam");
-                    else s.append("lam");
+                    if(tens == 0) s.append("năm");
+                    else s.append("lăm");
                     break;
                 case 6:
-                    s.append("sau");
+                    s.append("sáu");
                     break;
                 case 7:
-                    s.append("bay");
+                    s.append("bảy");
                     break;
                 case 8:
-                    s.append("tam");
+                    s.append("tám");
                     break;
                 case 9:
-                    s.append("chin");
+                    s.append("chín");
                     break;
                 default:
                     break;
             }
-
             System.out.println(s);
         }
-
-
         sc.close();
     }
 }

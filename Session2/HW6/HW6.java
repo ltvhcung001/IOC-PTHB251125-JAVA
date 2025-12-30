@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class HW6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap N = ");
+        System.out.print("Nhập N = ");
         int n = sc.nextInt();
         while (n <= 0){
-            System.out.println("So nhap vao khong hop le, nhap so nguyen duong.");
-            System.out.print("Nhap N = ");
+            System.out.println("Số nhập vào không hợp lệ, nhập số nguyên dương.");
+            System.out.print("Nhập N = ");
             n = sc.nextInt();
         }
 
