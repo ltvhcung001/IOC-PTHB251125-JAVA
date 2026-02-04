@@ -25,13 +25,11 @@ public class OrderManager implements Manage<Order> {
             System.out.println("Danh sách đơn hàng trống.");
         } else {
             for (int i = 0; i < orderList.size(); i++) {
-                // Hiển thị số thứ tự 1, 2, 3... giống trong ảnh mẫu
                 System.out.println((i + 1) + ". " + orderList.get(i));
             }
         }
     }
 
-    // Hàm tìm vị trí index dựa trên Mã đơn hàng (String)
     public int findIndexByCode(String code) {
         for (int i = 0; i < orderList.size(); i++) {
             if (orderList.get(i).getOrderCode().equalsIgnoreCase(code)) {
